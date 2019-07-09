@@ -7,9 +7,6 @@ MOUNT_DIR=/media/guest
 VBOX_BINARY_NAME=VBoxLinuxAdditions.run
 GUEST_MOUNT_POINT=/dev/sr0
 
-# Exit on errors
-set -e
-
 # Install packages that we need to install guest additions and some
 # other essential packages
 dnf install \
@@ -59,7 +56,7 @@ gpgkey=https://packages.cloud.google.com/yum/doc/yum-key.gpg
        https://packages.cloud.google.com/yum/doc/rpm-package-key.gpg
 EOM
 
-dnf install google-cloud-sdk
+dnf install google-cloud-sdk -y
 
 # Init g-cloud
 gcloud init
